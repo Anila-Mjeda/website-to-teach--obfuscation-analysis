@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obfuscated JavaScript Example</title>
+</head>
+<body>
+    <h1>Obfuscated JavaScript Example</h1>
+  <p> Illustrating use of document.write </p>
+
+    <script>
+        // Compose an encrypted text
+        var encryptedText = "";
+        for (var i = 0; i < 17; i++) {
+            encryptedText += String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+        }
+
+        // Obfuscated JavaScript code
+        document.write("<script>");
+        document.write("    (function () {");
+        document.write("        var x = '" + encryptedText + "';");
+        document.write("        var y = '';");
+        document.write("");
+        document.write("        for (var i = 0; i < x.length; i++) {");
+        document.write("            y += String.fromCharCode(x.charCodeAt(i) - 5);");
+        document.write("        }");
+        document.write("");
+        document.write("        // Encrypted code");
+        document.write("        var encryptedCode = y;");
+        document.write("        console.log('Encrypted Code:', encryptedCode);");
+        document.write("");
+        document.write("    })();");
+        document.write("</script>");
+    </script>
+</body>
+</html>
