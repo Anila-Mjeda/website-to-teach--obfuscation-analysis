@@ -21,12 +21,9 @@
             var decryptedCode = y;
             console.log(decryptedCode);
 
-            // Execute the decrypted code
-            try {
-                eval(decryptedCode);
-            } catch (e) {
-                console.error("Error executing decrypted code: ", e);
-            }
+            // Display the decrypted code on the page
+            var codeContainer = document.getElementById("decryptedCodeContainer");
+            codeContainer.textContent = decryptedCode;
         })();
     </script>
     
@@ -39,5 +36,8 @@
         <li>Manually deobfuscate the code if needed by reverse engineering it step by step.</li>
         <li>Execute the deobfuscated code to see the result.</li>
     </ol>
+    
+    <h2>Decrypted Code</h2>
+    <div id="decryptedCodeContainer"></div>
 </body>
 </html>
