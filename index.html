@@ -5,7 +5,18 @@
 </head>
 <body>
     <h1>Welcome to the JavaScript Obfuscation and Deobfuscation Page</h1>
-    <p>This page is intended for learning about JavaScript obfuscation and the process of deobfuscating JavaScript code using developer tools.</p>
+    <p>This page contains obfuscated code. Let's learn how to use developer tools to inspect and deobfuscate it.</p>
+    
+    <h2>Instructions</h2>
+    <p>Follow these steps to inspect and deobfuscate the code:</p>
+    <ol>
+        <li>Right-click on this page and select "Inspect" or press <kbd>F12</kbd> to open developer tools.</li>
+        <li>In the developer tools, navigate to the "Elements" tab to find the HTML source code.</li>
+        <li>Find the obfuscated JavaScript code within the source code. Look for a script element.</li>
+        <li>Set breakpoints in the script using the "Sources" tab to pause execution at specific points.</li>
+        <li>Inspect the v and unobfuscated and obfuscated values at different stages of the script.</li>
+        <li>Continue execution and observe the deobfuscated text.</li>
+    </ol>
     
     <h2>Obfuscation and Deobfuscation Example</h2>
     <p>Let's explore how obfuscation and deobfuscation work:</p>
@@ -15,7 +26,6 @@
     <script>
         var plainText = "Hello, I've been expecting you!";
         var obfuscatedText = obfuscate(plainText);
-        var sanitizedObfuscatedText = sanitizeText(obfuscatedText);
 
         function obfuscate(text) {
             var obfuscated = "";
@@ -24,20 +34,15 @@
             }
             return obfuscated;
         }
-
-        function sanitizeText(text) {
-            return text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }
     </script>
     
-    <h4>Obfuscated Text (Sanitized):</h4>
+    <h4>Obfuscated Text:</h4>
     <div id="obfuscatedTextContainer"></div>
 
     <h3>Step 2: Deobfuscation</h3>
     <p>In this step, we take the obfuscated text and deobfuscate it by shifting each character's Unicode code back by 5 positions to retrieve the original text.</p>
     <script>
         var unobfuscatedText = unobfuscate(obfuscatedText);
-        var sanitizedUnobfuscatedText = sanitizeText(unobfuscatedText);
 
         function unobfuscate(obfuscatedText) {
             var unobfuscated = "";
@@ -48,24 +53,16 @@
         }
     </script>
     
-    <h4>Unobfuscated Text (Sanitized):</h4>
+    <h4>Unobfuscated Text:</h4>
     <div id="unobfuscatedTextContainer"></div>
     
-    <h2>Understanding the Process</h2>
-    <p>This example demonstrates how obfuscation can make code harder to understand by altering its representation. Deobfuscation is the process of reversing these changes to reveal the original content.</p>
-    
-    <h2>Developer Tools</h2>
-    <p>When using developer tools in your browser, you can set breakpoints in the code to stop its execution and inspect variables at specific points. This allows you to observe the obfuscation and deobfuscation process step by step.</p>
-    
     <script>
-        // Display sanitized obfuscated text on the screen
+        // Display obfuscated and unobfuscated text on the screen
         var obfuscatedTextContainer = document.getElementById("obfuscatedTextContainer");
-        obfuscatedTextContainer.innerHTML = sanitizedObfuscatedText;
+        obfuscatedTextContainer.textContent = obfuscatedText;
 
-        // Display sanitized unobfuscated text on the screen
         var unobfuscatedTextContainer = document.getElementById("unobfuscatedTextContainer");
-        unobfuscatedTextContainer.innerHTML = sanitizedUnobfuscatedText;
+        unobfuscatedTextContainer.textContent = unobfuscatedText;
     </script>
 </body>
 </html>
-
