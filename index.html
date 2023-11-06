@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript Obfuscation Deobfuscation</title>
+    <title>JavaScript Obfuscation and Deobfuscation</title>
 </head>
 <body>
-    <h1>Welcome to the JavaScript Obfuscation Deobfuscation Page</h1>
+    <h1>Welcome to the JavaScript Obfuscation and Deobfuscation Page</h1>
     <p>This page is intended for learning about JavaScript obfuscation and the process of deobfuscating JavaScript code using developer tools.</p>
     
-    <h2>Obfuscated JavaScript Code</h2>
-     <script>
-        // Step 1: Obfuscate "X"
-        var plainText = "X";
+    <h2>Obfuscation and Deobfuscation Example</h2>
+    <p>Let's explore how obfuscation and deobfuscation work:</p>
+    
+    <h3>Step 1: Obfuscation</h3>
+    <p>In this step, we take the plain text "Hello, I've been expecting you!" and obfuscate it by shifting each character's Unicode code by 5 positions forward.</p>
+    <script>
+        var plainText = "Hello, I've been expecting you!";
         var obfuscatedText = obfuscate(plainText);
-
-        // Display obfuscated text
-        console.log("Obfuscated Text:", obfuscatedText);
-
-        // Step 2: Unobfuscate "X"
-        var unobfuscatedText = unobfuscate(obfuscatedText);
-
-        // Display unobfuscated text
-        console.log("Unobfuscated Text:", unobfuscatedText);
+        var sanitizedObfuscatedText = sanitizeText(obfuscatedText);
 
         function obfuscate(text) {
             var obfuscated = "";
@@ -29,6 +24,20 @@
             }
             return obfuscated;
         }
+
+        function sanitizeText(text) {
+            return text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+    </script>
+    
+    <h4>Obfuscated Text (Sanitized):</h4>
+    <div id="obfuscatedTextContainer"></div>
+
+    <h3>Step 2: Deobfuscation</h3>
+    <p>In this step, we take the obfuscated text and deobfuscate it by shifting each character's Unicode code back by 5 positions to retrieve the original text.</p>
+    <script>
+        var unobfuscatedText = unobfuscate(obfuscatedText);
+        var sanitizedUnobfuscatedText = sanitizeText(unobfuscatedText);
 
         function unobfuscate(obfuscatedText) {
             var unobfuscated = "";
@@ -39,17 +48,24 @@
         }
     </script>
     
-    <h2>Deobfuscation Instructions</h2>
-    <p>Follow these steps to use browser developer tools for deobfuscating the JavaScript code above:</p>
-    <ol>
-        <li>Right-click on the obfuscated JavaScript code and select "Inspect" to open developer tools.</li>
-        <li>Navigate to the "Elements" tab to find the JavaScript code.</li>
-        <li>Analyze the obfuscated code and understand its structure.</li>
-        <li>Manually deobfuscate the code if needed by reverse engineering it step by step.</li>
-        <li>Execute the deobfuscated code to see the result.</li>
-    </ol>
+    <h4>Unobfuscated Text (Sanitized):</h4>
+    <div id="unobfuscatedTextContainer"></div>
     
-    <h2>Decrypted Code</h2>
-    <div id="decryptedCodeContainer"></div> <!-- This element should come after the script block. -->
+    <h2>Understanding the Process</h2>
+    <p>This example demonstrates how obfuscation can make code harder to understand by altering its representation. Deobfuscation is the process of reversing these changes to reveal the original content.</p>
+    
+    <h2>Developer Tools</h2>
+    <p>When using developer tools in your browser, you can set breakpoints in the code to stop its execution and inspect variables at specific points. This allows you to observe the obfuscation and deobfuscation process step by step.</p>
+    
+    <script>
+        // Display sanitized obfuscated text on the screen
+        var obfuscatedTextContainer = document.getElementById("obfuscatedTextContainer");
+        obfuscatedTextContainer.innerHTML = sanitizedObfuscatedText;
+
+        // Display sanitized unobfuscated text on the screen
+        var unobfuscatedTextContainer = document.getElementById("unobfuscatedTextContainer");
+        unobfuscatedTextContainer.innerHTML = sanitizedUnobfuscatedText;
+    </script>
 </body>
 </html>
+
