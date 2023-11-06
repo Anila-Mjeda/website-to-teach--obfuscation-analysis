@@ -8,23 +8,35 @@
     <p>This page is intended for learning about JavaScript obfuscation and the process of deobfuscating JavaScript code using developer tools.</p>
     
     <h2>Obfuscated JavaScript Code</h2>
-    <script>
-        (function () {
-            var x = "Hey there, How's this obfuscation exercise going?";
-            var y = "";
+     <script>
+        // Step 1: Obfuscate "X"
+        var plainText = "X";
+        var obfuscatedText = obfuscate(plainText);
 
-            for (var i = 0; i < x.length; i++) {
-                y += String.fromCharCode(x.charCodeAt(i) - 5);
+        // Display obfuscated text
+        console.log("Obfuscated Text:", obfuscatedText);
+
+        // Step 2: Unobfuscate "X"
+        var unobfuscatedText = unobfuscate(obfuscatedText);
+
+        // Display unobfuscated text
+        console.log("Unobfuscated Text:", unobfuscatedText);
+
+        function obfuscate(text) {
+            var obfuscated = "";
+            for (var i = 0; i < text.length; i++) {
+                obfuscated += String.fromCharCode(text.charCodeAt(i) + 5);
             }
+            return obfuscated;
+        }
 
-            // Decrypted code
-            var decryptedCode = y;
-            console.log(decryptedCode);
-
-            // Display the decrypted code on the page
-            var codeContainer = document.getElementById("decryptedCodeContainer");
-            codeContainer.textContent = decryptedCode;
-        })();
+        function unobfuscate(obfuscatedText) {
+            var unobfuscated = "";
+            for (var i = 0; i < obfuscatedText.length; i++) {
+                unobfuscated += String.fromCharCode(obfuscatedText.charCodeAt(i) - 5);
+            }
+            return unobfuscated;
+        }
     </script>
     
     <h2>Deobfuscation Instructions</h2>
