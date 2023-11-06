@@ -1,22 +1,43 @@
-<script>
-    // Obfuscated JavaScript code
-    (function () {
-        var x = "vtsjWfot-dmpfttjoh!0.*71";
-        var y = "";
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Obfuscation Deobfuscation</title>
+</head>
+<body>
+    <h1>Welcome to the JavaScript Obfuscation Deobfuscation Page</h1>
+    <p>This page is intended for learning about JavaScript obfuscation and the process of deobfuscating JavaScript code using developer tools.</p>
+    
+    <h2>Obfuscated JavaScript Code</h2>
+    <script>
+        (function () {
+            var x = "vtsjWfot-dmpfttjoh!0.*71";
+            var y = "";
 
-        for (var i = 0; i < x.length; i++) {
-            y += String.fromCharCode(x.charCodeAt(i) - 5);
-        }
+            for (var i = 0; i < x.length; i++) {
+                y += String.fromCharCode(x.charCodeAt(i) - 5);
+            }
 
-        // Decrypted code
-        var decryptedCode = y;
-        console.log(decryptedCode);
+            // Decrypted code
+            var decryptedCode = y;
+            console.log(decryptedCode);
 
-        // Execute the decrypted code
-        try {
-            eval(decryptedCode);
-        } catch (e) {
-            console.error("Error executing decrypted code: " + e);
-        }
-    })();
-</script>
+            // Execute the decrypted code
+            try {
+                eval(decryptedCode);
+            } catch (e) {
+                console.error("Error executing decrypted code: " + e);
+            }
+        })();
+    </script>
+    
+    <h2>Deobfuscation Instructions</h2>
+    <p>Follow these steps to use browser developer tools for deobfuscating the JavaScript code above:</p>
+    <ol>
+        <li>Right-click on the obfuscated JavaScript code and select "Inspect" to open developer tools.</li>
+        <li>Navigate to the "Elements" tab to find the JavaScript code.</li>
+        <li>Analyze the obfuscated code and understand its structure.</li>
+        <li>Manually deobfuscate the code if needed by reverse engineering it step by step.</li>
+        <li>Execute the deobfuscated code to see the result.</li>
+    </ol>
+</body>
+</html>
